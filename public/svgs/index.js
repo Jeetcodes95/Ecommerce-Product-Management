@@ -1,0 +1,1 @@
+export { default as SiteMarkImg } from './sitemark.svg';

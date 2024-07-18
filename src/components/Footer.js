@@ -11,25 +11,26 @@ import Image from 'next/image';
 import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
-import SiteMarkImg from '../../public/sitemark.svg';
+import { SiteMarkImg } from '../../public/svgs';
+
 
 const logoStyle = {
-  width: '140px',
-  height: 'auto',
+	width: '140px',
+	height: 'auto',
 };
 
 function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" mt={1}>
-      {'Copyright © '}
-      <Link href="https://mui.com/">Sitemark&nbsp;</Link>
-      {new Date().getFullYear()}
-    </Typography>
-  );
+	return (
+		<Typography variant="body2" color="text.secondary" mt={1}>
+			{'Copyright © '}
+			<Link href="https://mui.com/">Sitemark&nbsp;</Link>
+			{new Date().getFullYear()}
+		</Typography>
+	);
 }
 
 export default function Footer() {
-  return (
+	return (
 		<Container
 			sx={{
 				display: 'flex',
@@ -58,13 +59,14 @@ export default function Footer() {
 				>
 					<Box sx={{ width: { xs: '100%', sm: '60%' } }}>
 						<Box sx={{ ml: '-15px' }}>
-							<Image
+							{/* <Image
 								width={500}
 								height={500}
 								src={SiteMarkImg}
 								style={logoStyle}
 								alt="logo of sitemark"
-							/>
+							/> */}
+							<SiteMarkImg width={200} height={200} />
 						</Box>
 						<Typography variant="body2" fontWeight={600} gutterBottom>
 							Newsletter

@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
-import SiteMarkImg from '../../public/sitemark.svg';
+import {SiteMarkImg}  from '../../public/svgs';
 
 const logoStyle = {
 	width: '140px',
@@ -84,14 +84,14 @@ function AppAppBar({ mode, toggleColorMode }) {
 								px: 0,
 							}}
 						>
-							<Image
+							{/* <Image
 								width={500}
 								height={500}
 								src={SiteMarkImg}
 								style={logoStyle}
 								alt="logo of sitemark"
-							/>
-							{/* <SiteMarkImg /> */}
+							/> */}
+							<SiteMarkImg width={150} height={150} />
 							<Box sx={{ display: { xs: 'none', md: 'flex' } }}>
 								<MenuItem
 									onClick={() => scrollToSection('features')}
