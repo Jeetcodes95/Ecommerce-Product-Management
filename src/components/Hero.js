@@ -7,9 +7,11 @@ import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import ShopImg from '../../public/icons/shop.png';
+import ShopingImg from '../../public/svgs';
 
 export default function Hero() {
-  return (
+	return (
 		<Box
 			id="hero"
 			sx={theme => ({
@@ -75,8 +77,8 @@ export default function Hero() {
 						width: '100%',
 						backgroundImage:
 							theme.palette.mode === 'light'
-								? 'url("/static/images/templates/templates-images/hero-light.png")'
-								: 'url("/static/images/templates/templates-images/hero-dark.png")',
+								? `url('../icons/shop.png')`
+								: `url('../icons/shop.png')`,
 						backgroundSize: 'cover',
 						borderRadius: '10px',
 						outline: '1px solid',

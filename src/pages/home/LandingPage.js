@@ -7,6 +7,7 @@ import AppAppBar from '../../components/AppAppBar';
 import Hero from '../../components/Hero';
 import Features from '../../components/Features';
 import Footer from '../../components/Footer';
+import { useRouter } from 'next/router';
 
 export default function LandingPage() {
 	const [mode, setMode] = React.useState('light');
@@ -15,6 +16,8 @@ export default function LandingPage() {
 	const toggleColorMode = () => {
 		setMode(prev => (prev === 'dark' ? 'light' : 'dark'));
 	};
+
+	const router = useRouter();
 
 	return (
 		<ThemeProvider theme={defaultTheme}>

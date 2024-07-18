@@ -12,7 +12,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
-import {SiteMarkImg}  from '../../public/svgs';
+import { SiteMarkImg } from '../../public/svgs';
+import { useRouter } from 'next/router';
 
 const logoStyle = {
 	width: '140px',
@@ -22,6 +23,7 @@ const logoStyle = {
 
 function AppAppBar({ mode, toggleColorMode }) {
 	const [open, setOpen] = React.useState(false);
+	const router = useRouter();
 
 	const toggleDrawer = newOpen => () => {
 		setOpen(newOpen);
@@ -39,6 +41,10 @@ function AppAppBar({ mode, toggleColorMode }) {
 			});
 			setOpen(false);
 		}
+	};
+
+	const handleSignupPage = () => {
+		router.push('/signup/signup')
 	};
 
 	return (
@@ -101,14 +107,6 @@ function AppAppBar({ mode, toggleColorMode }) {
 										Store
 									</Typography>
 								</MenuItem>
-								{/* <MenuItem
-                  onClick={() => scrollToSection('highlights')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    Highlights
-                  </Typography>
-                </MenuItem> */}
 							</Box>
 						</Box>
 						<Box
@@ -124,7 +122,7 @@ function AppAppBar({ mode, toggleColorMode }) {
 								variant="text"
 								size="small"
 								component="a"
-								href="/material-ui/getting-started/templates/sign-in/"
+								onClick={() => router.push('/admin/login')}
 								target="_blank"
 							>
 								Sign in
@@ -134,7 +132,7 @@ function AppAppBar({ mode, toggleColorMode }) {
 								variant="contained"
 								size="small"
 								component="a"
-								href="/material-ui/getting-started/templates/sign-up/"
+								onClick={() => router.push('/admin/signup')}
 								target="_blank"
 							>
 								Sign up
